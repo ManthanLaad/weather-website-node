@@ -14,9 +14,7 @@ form.addEventListener("submit", (e) => {
   outputP1.textContent = `On our way to ${address} ✈️🌍`
   outputP2.textContent = "Loading...."
 
-  fetch(
-    `http://localhost:3000/weather?address=${encodeURIComponent(address)}`
-  ).then((res) => {
+  fetch(`/weather?address=${encodeURIComponent(address)}`).then((res) => {
     res.json().then((data) => {
       if (data.error) {
         outputP1.textContent = data.error
