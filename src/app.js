@@ -42,7 +42,7 @@ app.get("/weather", (req, res) => {
     if (error) {
       return res.send({ error })
     }
-    weather(latitude, longitude, (error, forecastData) => {
+    weather(latitude, longitude, (error, forecastData, icon_url) => {
       if (error) {
         return res.send({ error })
       }
@@ -53,6 +53,7 @@ app.get("/weather", (req, res) => {
         name: "Manthan Laad",
         location,
         forecastData,
+        icon_url,
         message: `Location: ${location}  Forecast: ${forecastData}`,
       })
     })
@@ -64,14 +65,16 @@ app.get("/about", (req, res) => {
     title: "About Me",
     name: "Manthan Laad",
     message:
-      "I am a tech enthusiast looking to create an impact on the Worldd!!",
+      "This site was created by Manthan, using Mapbox🌏📌 and Weather Stack⛅ APIs",
   })
 })
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
     name: "Manthan Laad",
-    message: "laad.manthan@gmail.com",
+
+    message:
+      "Contact me at laad.manthan@gmail.com when it snows in the desert 🐪☃️",
   })
 })
 app.get("/help/*", (req, res) => {

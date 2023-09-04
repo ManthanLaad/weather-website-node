@@ -1,27 +1,36 @@
 <html lang="en">
-  <head>
+
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather</title>
   <link rel="icon" href="/img/weather.png" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
-  <body>
-    <div class="main-content">
+
+<body>
+  <div class="main-content">
     {{>header}}
 
     <p>{{message}}</p>
 
     <form action="">
       <input type="text" placeholder="Location" required>
-      <button >Search</button>
+      <button>Search</button>
     </form>
 
-    <p id="output-1"></p>
+    <div id="container">
+  <p id="output-1"></p>
+  <img id="weather-icon" alt="Weather Icon" src="weather.jpg">
+</div>
     <p id="output-2"></p>
-    </div>
 
-    {{>footer}}
-  </body>
-  <script src="/js/app.js"></script>
+  </div>
+
+
+
+  {{>footer}}
+</body>
+<script src="/js/app.js"></script>
+
 </html>
